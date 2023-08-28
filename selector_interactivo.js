@@ -1,3 +1,9 @@
+//variables
+const genero = ("aventuras", "risas", "fantasias");
+const personaje = ("dinosaurio", "unicornio", "astronauta");
+const lugar = ("castillo", "bosque", "espacio")
+const elemento = ("varita", "bicicleta", "cohete")
+//array de objetos
 const arrayDeCuentos = [
     {
         id: "0",
@@ -639,57 +645,54 @@ const arrayDeCuentos = [
         elemento: "bicicleta",
         nombre: "fantasiasAstronautaEspacioCohete"
     },
-    ];
-    const filtrado = arrayDeCuentos.filter((id, genero, personaje,lugar, elemento, nombre) => {
-        console.log(id);
-    });
+];
 
-let genero = prompt("Bienvenido al Reproductor Intercativo de la Tía Botas. Escribe tu género favorito: aventuras o risas o fantasias")
+//funcion para recorrer y mostrar array 
+function mostrarArray(arrayCualquiera,funcionCualquiera) {
+    for(let i = 0; i < arrayCualquiera.length; i++){
+        funcionCualquiera(arrayCualquiera[i]);
+    }
+}
+mostrarArray(arrayDeCuentos,console.log);
 
-if(genero == "aventuras"){
-    alert("wow se vienen las aventuras")
-}
-if(genero == "risas"){
-    alert("a reir con las mejores historias")
-}
-if(genero == "fantasias"){
-    alert("imagina las mas locas historias")
-}
+//filtrado de array de objetos por nombre del cuento
+arrayDeCuentos.forEach((audioCuento) =>{
+    console.log(audioCuento.nombre)
+})
 
-let personaje = prompt("Escribe tu personaje favorito: unicornio o astronauta o dinosaurio")
-
-if(personaje == "unicornio"){
-    alert("muy buena seleción a cabalgar!")
-}
-if(personaje == "dinosaurio"){
-    alert("seguro tienes tu favorito")
-}
-if(personaje == "astronauta"){
-    alert("a disfrutar del cosmos")
-}
-
-let lugar = prompt("Escribe tu lugar favorito: bosque o espacio o castillo")
-
-if(lugar == "espacio"){
-    alert("3, 2, 1, despegue!")
-}
-if(lugar == "bosque"){
-    alert("hadas o gnomos de seguro")
-}
-if(lugar == "castillo"){
-    alert("las princesas han cambiado")
+//selecion de cuento, recorrido de array y push
+const cuentoElegido = [];
+for(let i = 0; i < 1; i++){
+    
+    let genero = prompt("Escribe tu genero favorito: aventuras, risas, fantasias");
+    let personaje = prompt("Cual es tu personaje: dinosaurio, unicornio, astronauta ");
+    let lugar = prompt("En qué lugar te gustaría: castillo, bosque, espacio");
+    let elemento = prompt("Cuál es tu elemento para usar: varita, bicicleta, cohete");
+    
+    const cuento = {
+        genero: genero,
+        personaje: personaje,
+        lugar: lugar,
+        elemento: elemento,
+    }
+    
+    cuentoElegido.push(cuento);
+    console.log(cuentoElegido);
+    
+    alert("Genial!!! ahora dale clic a escuchar y disfruta la veces que quieras!!! Recuerda que tambien puedes escribir tus ideas para nuevas aventuras!!!")
 }
 
-let elemento = prompt("Por último elijamos el elemento para tus historias entre: varita o bicicleta o cohete")
-
-if(elemento == "varita"){
-    alert("la magia está por comenzar...")
-}
-if(elemento == "bicicleta"){
-    alert("a rodar las aventuras!!!")
-}
-if(elemento == "cohete"){
-    alert("Huston tenemos un cuento, repito tenemos un cuento")
+//creacion de nuevo objeto cuento
+const nuevosCuentos = [];
+for(let i = 0; i < 1; i++){
+    let idea = prompt("Escribe tu nueva idea para un emocionante audiocuento y podrás ser publicado por La Tía Botas:");
+    
+    const ideaNueva = {
+        idea: idea,
+    }
+    
+    nuevosCuentos.push(ideaNueva);
+    console.log(nuevosCuentos);
 }
 
 
